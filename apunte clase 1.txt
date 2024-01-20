@@ -28,6 +28,7 @@ git add text.txt //para trackear un archivo
 git add . //agrega al track todos los files del dir.
 git config --global user.email "carlos@gmail.com"		//setea el mail de usuario
 git config --global user.name "Carlos"					//setea el nombre de usuario
+git config user.password ** token generado en la página de github **
 	sino agrego la clausula global se configura solo para este proyecto y no para otros
 git commit -m "Inicio del proyecto."					//comiteamos el proyecto -m "message" (se commitean los archivos trackeados, los no trackeados no se commitean)
 git checkout -- <archivo>..." //para descartar los cambios en el directorio de trabajo se vuelve al punto inicial
