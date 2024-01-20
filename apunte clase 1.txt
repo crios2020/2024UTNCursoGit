@@ -1,0 +1,115 @@
+Profe Daniel Rinaldi:
+
+
+svn: centralizado, esta en un solo server cada desarrollador tiene acceso a algunos archivos del proyecto.
+
+git: distribuido, todos los desarrolladores tiene una copia completa del proyecto. 
+	(Resulta más seguro por que hay varias copias del proyecto)
+
+Servidor remoto de git no es mandatorio es optativo.
+
+
+comando de linux
+pwd: muestra el directorio actual
+cd: cambia de directorio
+ls: list, lista el dir
+clear: limpia la consola
+mkdir: crea directorio
+date: fecha y hora del equipo
+touch texto.txt: crea el archivo texto.txt vacio
+
+
+inicializamos el repositorio git
+mkdir git
+cd git
+git init	//inicia el repositorio en el directorio actual
+git status	//estado de los archivos del repositorio
+git add text.txt //para trackear un archivo
+git add . //agrega al track todos los files del dir.
+git config --global user.email "carlos@gmail.com"		//setea el mail de usuario
+git config --global user.name "Carlos"					//setea el nombre de usuario
+	sino agrego la clausula global se configura solo para este proyecto y no para otros
+git commit -m "Inicio del proyecto."					//comiteamos el proyecto -m "message" (se commitean los archivos trackeados, los no trackeados no se commitean)
+git checkout -- <archivo>..." //para descartar los cambios en el directorio de trabajo se vuelve al punto inicial
+git diff <archivo> 	me muestra las diferencias que hay en el archivo
+git log //muestra el historial
+git log --online	//muestra el historial en una sola linea.
+git reset HEAD test.txt //resetea un archivo, lo saca del staging area y lo llega al working directory
+
+git remote add origin https://github.com/crios2020/test.git
+git push -u origin master     //subo a un repo externo de github la rama Master
+git remote show 				//muestra la lista de repos externos configurados
+git remote show origin			//muestra el estado frente al repo externo
+
+fecth no hace merge, no incorpora los cambios
+git fetch origin
+
+git merge origin master  // hay que resolver los choques
+
+git pull origin master	//hace un automerge
+						// se resuelven los merges automaticamente
+
+git clone https://github.com/crios2020/test.git //trae un repo externo, en este caso de github
+
+git tag			// devuelve la lista de tags
+git tag -a v1.0.0 -m "primer version del proyecto X" //marco un tag en el proyecto
+git show v1.0.0		//muesta un tag determinado
+
+git push origin v.1.0.0  //sube un solo tags
+git push origin --tags //sube todos los tags
+
+git branches testing	//crea una nueva rama de desarrollo apunta al ultimo commit
+git checkout testing	//cambia a la rama testing
+
+git config global alias.st status	//coloca un alias al comando status
+git st	//Ejecuta el alias 
+
+git blame -- README.MD		//da informe de los distintos commit y quien lo hiso sobre un file
+
+//clase 2
+archivo .gitignore
+adentro de este archivo escribimos la lista de archivos a ser ignorados en el push (en el commit del github)
+
+dejar en el proyectos archivos.example y carpetas para que el usuario que clono el repo, puede copiar el 
+modelo de los archivos de configuración ignorados.
+
+Ejemplo de .gitignore
+config.json			//file normal
+!logs/.gitkeep		//no omitir dicho file, esto asegura que se cree la carpeta
+log/*				//esto asegura tb que la carpeta se cree al clonar el repo
+//los comentarios no son validos en el .gitignore
+//solo para explicar en el apunte
+
+Para archivos README.md https://guides.github.com/features/mastering-markdown/
+
+
+
+
+
+zonas del proyecto
+
+working directory: contiene todos los archivos del proyecto. Los trackeados y los no trackeados
+
+staging area: area de archivos trackeados(seguidos)
+
+local repo: area de commit, puntos de version, se pueden retroceder a los puntos de control (se acostumbra a guardar hitos).
+
+
+Repositorios Remotos
+cuidado github modo gratis es publico
+- nuestro código queda descubierto
+- pero lo peor cuidado con los config file del proyecto por que pueden contener datos de conexiones a bd o cosas privadas
+
+
+
+Tags indica el hito de nro de versión se usa eventualmente para marcar el cambio de version
+los tag por defecto no suben al repo remoto.
+
+Branches  RAMAS
+
+
+bitbucket.org: da repositorios privados
+
+
+
+
