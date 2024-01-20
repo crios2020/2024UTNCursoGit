@@ -14,5 +14,15 @@ git branch -M main
 git push -u origin main
 
 
-linea agregada para testear pull
+
+-- Manejo de Ramas
+git branch									--muestra las ramas en verde la rama activa
+git branch nombre							--crea una nueva rama
+git branch -m nombreOriginal nombreNuevo	--renombra una rama
+git checkout nombreRama						--cambia de rama activa
+git branch -d nombreRama					--borra una rama, no puede ser la rama activa
+git diff rama1 rama2						--muestra las diferencias entre dos ramas
+git merge ramaOrigin RamaDestino			--merge (Unifica las ramas) (hacerlo desde ramaDestino activa)
+
+
 
